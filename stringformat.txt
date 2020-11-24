@@ -1,0 +1,1 @@
+System.out.print(String.format("%,2d",!SZÖVEG AMIT FORMÁZUNK!)+" ");

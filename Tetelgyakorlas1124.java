@@ -92,7 +92,7 @@ public class Tetelgyakorlas1124
             
             for (int i = 0; i < interval; i++) 
         {
-            if (negativ[i] /5 == 0) 
+            if (negativ[i] % 5 == 0) 
             {
                 szerepel = true; 
             }

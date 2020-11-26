@@ -23,12 +23,32 @@ public class Tetelgyakorlas1124
        
        System.out.print("\nA tömb1 elemei:");
        
+       boolean szerepel = false;
+        for (int i = 0; i < interval; i++) 
+        {
+            if (tomb1[i] == 0) 
+            {
+                szerepel = true;
+                break;
+            }
+        }
+        System.out.print(szerepel + " ");
        for (int i = 0; i < interval; i++) 
        {
             System.out.print(String.format("%,4d", tomb1[i])+" ");
         }
        
        System.out.print("\nA tömb2 elemei:");
+       
+       for (int i = 0; i < interval; i++) 
+        {
+            if (tomb2[i] == 0) 
+            {
+                szerepel = true;
+                break;
+            }
+        }
+        System.out.print(szerepel + " ");
        
        for (int i = 0; i < interval; i++) 
        {
@@ -69,6 +89,28 @@ public class Tetelgyakorlas1124
             }
             System.out.println("\nA negatív tömb összege: "+negativsum);
             System.out.println("A negatív tömb átlaga: "+(double) negativsum/negativelem);
+            
+            for (int i = 0; i < interval; i++) 
+        {
+            if (negativ[i] /5 == 0) 
+            {
+                szerepel = true; 
+            }
+            else 
+            {
+                szerepel = false;
+            }
+        } 
+        if (szerepel = true) 
+        {
+            System.out.println("\nA negatív tömbben szerepel 5-el osztható elem"); 
+        }
+        else
+        {
+               System.out.println("\nA negatív tömbben nem szerepel 5-el osztható elem");
+        }
+       
+        System.out.print(szerepel + " ");
         
     }
 }

@@ -23,11 +23,11 @@ public class Tetelgyakorlas1201 {
         int szamok[] = new int [elemszam];
         
         for (int i = 0; i < elemszam; i++) {
-            szamok[i] = (int) (Math.random()*100)-50;
+            szamok[i] = (int) (Math.random()*50)-50;
         }
         System.out.print("\nTömb elemei: ");
         for (int i = 0; i < elemszam; i++) {
-            System.out.print(elemszam + "  ");
+            System.out.print(szamok[i] + "  ");
         }
         
         // BUBORÉKOS RENDEZÉS

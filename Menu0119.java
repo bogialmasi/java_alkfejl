@@ -61,8 +61,8 @@ public class Menu0119 {
             System.out.println("A legkisebb szám: " + min);
         } else if (valasztas == 3) { //3 - van-e benne 40-50: megtudni, tartalmaz-e számot 40 és 50 között? 
             for (int i = 0; i < szamok.length; i++) {
-                if (szamok[i] <= 40) {
-                    if (szamok[i] >= 50) {
+                if (szamok[i] >= 40) {
+                    if (szamok[i] <= 50) {
                         System.out.println("A szamok lista tartalmaz 40 és 50 közötti számot");
                         break;
                     } else {

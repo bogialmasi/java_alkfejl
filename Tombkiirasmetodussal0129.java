@@ -11,11 +11,24 @@ package tombkiirasmetodussal0129;
  */
 public class Tombkiirasmetodussal0129 {
 
-    private static void kiiratas(int[] tomb) {
+    public static void kiiratas(int[] tomb) {
         for (int i = 0; i < tomb.length; i++) {
             System.out.print(String.format("%,3d", tomb[i]) + " ");
         }
         System.out.println("");
+    }
+
+    private static void buborek(int tomb[]) {
+        int n = tomb.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (tomb[j] > tomb[j + 1]) {
+                    int temp = tomb[j];
+                    tomb[j] = tomb[j + 1];
+                    tomb[j + 1] = temp;
+                }
+            }
+        }
     }
 
     public static void main(String[] args) {
@@ -23,22 +36,28 @@ public class Tombkiirasmetodussal0129 {
         int tomb1[] = new int[elemszam];
         int tomb2[] = new int[elemszam];
         int tomb3[] = new int[elemszam];
-        
+
         for (int i = 0; i < elemszam; i++) {
-            tomb1[i] = (int) (Math.random()*200)-100;
+            tomb1[i] = (int) (Math.random() * 200) - 100;
         }
         for (int i = 0; i < elemszam; i++) {
-            tomb2[i] = (int) (Math.random()*200)-100;
+            tomb2[i] = (int) (Math.random() * 200) - 100;
         }
         for (int i = 0; i < elemszam; i++) {
-            tomb3[i] = (int) (Math.random()*200)-100;
+            tomb3[i] = (int) (Math.random() * 200) - 100;
         }
 
-        System.out.println("Az első tömb elemei: ");
+        System.out.println("\nAz első tömb elemei: ");
         kiiratas(tomb1);
-        System.out.println("A második tömb elemei: ");
+        buborek(tomb1);
+        kiiratas(tomb1);
+        System.out.println("\nA második tömb elemei: ");
         kiiratas(tomb2);
-        System.out.println("A harmadik tömb elemei: ");
+        buborek(tomb2);
+        kiiratas(tomb2);
+        System.out.println("\nA harmadik tömb elemei: ");
+        kiiratas(tomb3);
+        buborek(tomb3);
         kiiratas(tomb3);
 
     }

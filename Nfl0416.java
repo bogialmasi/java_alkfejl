@@ -7,23 +7,38 @@ import java.util.ArrayList;
 public class Nfl0416 {
 
     public static ArrayList<NFL> Jatekos = new ArrayList<>();
-
+    
     public static void beolvasas() {
         try {
             RandomAccessFile fajl = new RandomAccessFile("NFL_iranyitok.txt", "r");
-
+            String elsoSor = fajl.readLine();
+            if (elsoSor.contains(";")) {
+                Jatekos.add(new NFL(elsoSor));
+            }else{
+                System.out.println(elsoSor);}
+            
             while (fajl.getFilePointer() < fajl.length()) {
                 Jatekos.add(new NFL(fajl.readLine()));
             }
             fajl.close();
-            System.out.println("\nBeolvasva " + Jatekos.size());
+            System.out.println("\nBeolvasva " + Jatekos.size() + " rekord.");
         } catch (IOException e) {
             System.out.println("Hiba történt!");
         }
     }
-
+    public static void feladat(int feladatszam){
+        System.out.println("\n" + feladatszam + ". feladat");}
+    
+    
+    
     public static void main(String[] args) {
         beolvasas();
+        feladat(1);
+        
+        for (int i = 0; i < Jatekos.size(); i++) {
+            System.out.println(Jatekos.get(i).iranyitomutato);
+        }
+        
     }
 
 }
@@ -52,4 +67,19 @@ class NFL {
         this.iranyitomutato = Double.parseDouble(replaceString);
         this.egyetem = adatok[7];
     }
+    /*private double Konvertal(String iranyitoMutato)
+    {
+        char decimalSeparator = System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator;
+        iranyitoMutato = iranyitoMutato.Replace(",", decimalSeparator).Replace(".", decimalSeparator);
+        if (double.TryParse(iranyitoMutato, out var ertek))
+            return ertek;
+        throw new FormatException("Hibás érték (irányítómutató)");
+    }*/
+	
+	public String FormazottNev(String nev)
+	{
+		String[] n = nev.split(" ");
+		n[n.length - 1] = n[n.length - 1].toUpperCase();
+		return String.join(" ", n);
+	}
 }
